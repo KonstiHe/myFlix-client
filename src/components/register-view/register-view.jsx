@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 export function RegisterView(props) {
     const [username, setUsername] = useState('');
@@ -44,4 +45,9 @@ export function RegisterView(props) {
         </form>
     );
 }
+
+RegisterView.propTypes = {
+
+    onRegister: PropTypes.func.isRequired
+};
 

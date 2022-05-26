@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 export function LoginView(props) {
     const [username, setUsername] = useState('');
@@ -14,6 +15,7 @@ export function LoginView(props) {
 
     const handleRegister = (e) => {
         e.preventDefault()
+        console.log(username, password);
         props.onRegister(true)
     }
 
@@ -37,4 +39,9 @@ export function LoginView(props) {
         </form>
     );
 }
+
+LoginView.propTypes = {
+    onLoggedIn: PropTypes.func.isRequired,
+    onRegister: PropTypes.func.isRequired
+};
 
