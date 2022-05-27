@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 
 export class MovieView extends React.Component {
 
@@ -8,9 +10,7 @@ export class MovieView extends React.Component {
 
         return (
             <div className="movie-view">
-                <div className="movie-poster">
-                    <img src={movieData.ImagePath} />
-                </div>
+
                 <div className="movie-title">
                     <span className="label">Title: </span>
                     <span className="value">{movieData.Title}</span>
