@@ -25549,7 +25549,7 @@ class MainView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","../movie-card/movie-card":"6EiBJ","@parcel/transformer-js/src/esmodule-helpers.js":"2Zd0k","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3aYq1","../movie-view/movie-view":"ikZdr","axios":"iYoWk","../login-view/login-view":"054li","../register-view/register-view":"F9ahz","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","./main-view.scss":"jyMAr","react-router-dom":"cpyQW"}],"6EiBJ":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","../movie-card/movie-card":"6EiBJ","@parcel/transformer-js/src/esmodule-helpers.js":"2Zd0k","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3aYq1","../movie-view/movie-view":"ikZdr","axios":"iYoWk","../login-view/login-view":"054li","../register-view/register-view":"F9ahz","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","react-router-dom":"cpyQW","./main-view.scss":"jyMAr"}],"6EiBJ":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$4249 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
