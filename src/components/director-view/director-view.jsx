@@ -1,7 +1,38 @@
-<Route path="/directors/:name" render={({ match, history }) => {
-    if (movies.length === 0) return <div className="main-view" />;
-    return <Col md={8}>
-        <DirectorView director={movies.find(m => m.Director.Name === match.params.name).Director} onBackClick={() => history.goBack()} />
-    </Col>
+import React from 'react';
+import PropTypes from 'prop-types';
+
+import { Button, Col, Container, Row, Col } from 'react-bootstrap';
+import { Link } from "react-router-dom";
+
+import './director-view.scss';
+
+export class DirectorView extends React.Component {
+
+    render() {
+        const { director, onBackClick } = this.props;
+
+        return (
+            <div className="director-view">
+                <Row>
+                    <Col className="label">Director: </Col>
+                    <Col className="value">{director.Name}</Col>
+                </Row>
+                <Row className="mt-3">
+                    <Col className="label">Bio: </Col>
+                    <Col className="value">{director.Bio}</Col>
+                </Row>
+                <Row className="mt-3">
+                    <Col className="label">Birth: </Col>
+                    <Col className="value">{director.Birth}</Col>
+                </Row>
+                <Row className="mt-3">
+                    <Col className="label">Death: </Col>
+                    <Col className="value">{director.Death}</Col>
+                </Row>
+                <Button className="d-block mt-3" onClick={() => { onBackClick(); }} variant="warning">Back</Button>
+            </div>
+        )
+    }
 }
-} />
+
+
