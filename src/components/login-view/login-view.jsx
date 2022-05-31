@@ -4,7 +4,6 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
 
-
 export function LoginView(props) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -55,7 +54,7 @@ export function LoginView(props) {
     const handleRegister = (e) => {
         e.preventDefault()
         console.log(username, password);
-        props.onRegister(username);
+
     }
 
     return (
@@ -76,8 +75,7 @@ export function LoginView(props) {
             </Button><br /><br />
             <Button variant="primary" type="submit" onClick={handleRegister}>
                 Register
-            </Button><br /><br />
-
+            </Button>
         </Form>
     );
 }
