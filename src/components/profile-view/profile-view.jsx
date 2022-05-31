@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 
 import { Button, Col, Container, Row } from 'react-bootstrap';
+import { FavoriteMoviesView } from './favorite-movie-view';
+import { UpdateView } from './update-view';
 
 import './profile-view.scss';
 
@@ -19,7 +21,7 @@ export function ProfileView(props) {
             headers: { Authorization: `Bearer ${token}` }
         })
             .then(response => {
-                console.log(user);
+                console.log(response);
                 setUser(response.data);
                 setFavoriteMovies(response.data.FavoriteMovies)
             })
@@ -29,6 +31,8 @@ export function ProfileView(props) {
     useEffect(() => {
         getUser();
     }, [])
+
+
 
     const handleDelete = () => {
         axios.delete(`https://kostja-movie-api.herokuapp.com/users/${currentUser}`, {
@@ -41,6 +45,7 @@ export function ProfileView(props) {
             }).
             catch(error => console.error(error))
     }
+
     return (
         <Container id="profile-form">
             <Row><h4>Your profile</h4></Row>

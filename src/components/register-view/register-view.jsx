@@ -94,7 +94,7 @@ export function RegisterView(props) {
                 <Form.Control type="birthday" value={birthday} onChange={e => setBirthday(e.target.value)} />
                 {birthdayErr && <p>{birthdayErr}</p>}
             </Form.Group><br /><br />
-            <Button variant="primary" type="submit" onClick={handleSubmit}>Submit</Button>
+            <Button variant="primary" type="submit" onClick={handleSubmit}>Register</Button>
         </Form>
     );
 }

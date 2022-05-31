@@ -58,6 +58,9 @@ export class MainView extends React.Component {
     this.getMovies(authData.token);
   }
 
+  onRegister() {
+    return <RegisterView />
+  }
 
   /*
     onLoggedOut() {
@@ -134,14 +137,12 @@ export class MainView extends React.Component {
             </Col>
           }} />
 
-          <Route exact path="/users/:Name" render={({ match, history }) => {
+          <Route exact path="/:Name" render={({ match, history }) => {
             if (!user) return <Col>
               <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
             </Col>
-            if (movies.length === 0) return <div className="main-view" />;
-            if (!user) return <Redirect to="/" />
             return <Col md={8}>
-              <ProfileView movies={movies} user={user === match.params.username} onBackClick={() => history.goBack()} />
+              <ProfileView movies={movies} user={user === match.params.Name} onBackClick={() => history.goBack()} />
             </Col>
           }} />
 
