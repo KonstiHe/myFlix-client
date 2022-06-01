@@ -6,15 +6,18 @@ import { Button, Col, Container, Row } from 'react-bootstrap';
 import { FavoriteMoviesView } from './favorite-movie-view';
 import { UpdateView } from './update-view';
 
-import './profile-view.scss';
+
 
 
 export function ProfileView(props) {
+    const { onBackClick } = props;
+
     const [user, setUser] = useState(props.user);
     const [movies, setMovies] = useState(props.movies);
     const [favoriteMovies, setFavoriteMovies] = useState([]);
     const currentUser = localStorage.getItem('user');
     const token = localStorage.getItem('token');
+
 
     const getUser = () => {
         axios.get(`https://kostja-movie-api.herokuapp.com/users/${currentUser}`, {
@@ -73,7 +76,8 @@ export function ProfileView(props) {
                     currentUser={currentUser}
                     token={token} />
             </Row>
-            <UpdateView user={user} />
+            <UpdateView user={user} /><br /><br />
+            <Button onClick={() => { onBackClick(); }}>Back</Button>
             <Button className="d-block mt-5" variant="warning" onClick={handleDelete}>Delete profile</Button>
         </Container>
     )

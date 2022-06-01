@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
+
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import { LoginView } from '../login-view/login-view';
@@ -8,6 +9,10 @@ import { RegisterView } from '../register-view/register-view';
 import { DirectorView } from '../director-view/director-view';
 import { GenreView } from '../genre-view/genre-view';
 import { ProfileView } from '../profile-view/profile-view';
+import { Navbar } from '../navbar/navbar';
+
+import './main-view.scss';
+
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
@@ -58,10 +63,6 @@ export class MainView extends React.Component {
     this.getMovies(authData.token);
   }
 
-  onRegister() {
-    return <RegisterView />
-  }
-
   /*
     onLoggedOut() {
       localStorage.removeItem('token');
@@ -76,6 +77,7 @@ export class MainView extends React.Component {
     const { movies, user } = this.state;
     return (
       <Router>
+        <Navbar user={user} />
         <Row className="main-view justify-content-md-center">
           <Route exact path="/" render={() => {
             if (!user) return <Col>

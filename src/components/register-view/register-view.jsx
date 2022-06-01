@@ -100,7 +100,12 @@ export function RegisterView(props) {
 }
 
 RegisterView.propTypes = {
-
+    register: PropTypes.shape({
+        Name: PropTypes.string.isRequired,
+        Password: PropTypes.string.isRequired,
+        Email: PropTypes.string.isRequired,
+        Birthday: PropTypes.string
+    }),
 
 };
 
