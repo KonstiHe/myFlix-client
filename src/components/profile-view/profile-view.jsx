@@ -12,6 +12,7 @@ import { UpdateView } from './update-view';
 export function ProfileView(props) {
     const { onBackClick } = props;
 
+
     const [user, setUser] = useState(props.user);
     const [movies, setMovies] = useState(props.movies);
     const [favoriteMovies, setFavoriteMovies] = useState([]);
@@ -71,7 +72,7 @@ export function ProfileView(props) {
             <Row className="mt-5"><h4>Your favorite movies</h4></Row>
             <Row className="mt-3">
                 <FavoriteMoviesView
-                    movies={movies}
+                    movies={props.movies}
                     favoriteMovies={favoriteMovies}
                     currentUser={currentUser}
                     token={token} />

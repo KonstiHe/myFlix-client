@@ -87,7 +87,7 @@ class MainView extends React.Component {
             return <MoviesList movies={movies} />;
           }} />
 
-          <Route path="/users" render={() => {
+          <Route exact path="/users" render={() => {
             if (user) return <Redirect to="/" />
             return <Col>
               <RegisterView />

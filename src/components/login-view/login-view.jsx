@@ -74,9 +74,7 @@ export function LoginView(props) {
                 Submit
             </Button><br /><br />
 
-            <Link to={`/users/`}>
-                <Button variant="primary">Register</Button>
-            </Link><br /><br />
+
 
         </Form>
     );
